@@ -6,7 +6,13 @@ $(document).ready(function() {
         var inputEmail = $("#inputEmail").val();
         var inputPassword = $("#inputPassword").val();
 
-        MyUser.login(inputEmail, inputPassword);
+        var resultLogin = MyUser.login(inputEmail, inputPassword);
+
+        if(resultLogin == true){
+            alert("Estamos dentro =)")
+        } else {
+            alert("Por favor, verifique seus dados e tente novamente.")
+        }
         
     });
 })

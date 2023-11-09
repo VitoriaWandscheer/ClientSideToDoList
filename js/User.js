@@ -19,17 +19,23 @@ class User {
     ];
 
     login(email, password) {
+
+        var result = false;
+
         this.userAllowed.map(function(item, index){
-            //console.log(item, index)
 
             if(item.email == email){
                 if(item.password == password){
-                    alert("Olá "+item.name+", fico feliz em te ver aqui!")
+                    alert("Olá "+item.name+", fico feliz em te ver aqui!");
+                    result = true
                 } else {
-                    alert("Senha incorreta.")
+                    alert("Senha incorreta.");
                 }
             }
+            
         })
+
+        return result;
     }
 
     logout() {
