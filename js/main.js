@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#buttonSignIn").click(function() {
-        alert("oii");
+        var inputEmail = $("#inputEmail").val();
+        var inputPassword = $("#inputPassword").val();
     });
 })
