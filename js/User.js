@@ -26,7 +26,6 @@ class User {
 
             if(item.email == email){
                 if(item.password == password){
-                    alert("Olá "+item.name+", fico feliz em te ver aqui!");
                     result = true
                 } else {
                     alert("Senha incorreta.");

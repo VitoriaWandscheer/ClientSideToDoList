@@ -9,7 +9,8 @@ $(document).ready(function() {
         var resultLogin = MyUser.login(inputEmail, inputPassword);
 
         if(resultLogin == true){
-            alert("Estamos dentro =)")
+            $("#loginContainer").hide('slow');
+            $("#toDoListContainer").show('slow');
         } else {
             alert("Por favor, verifique seus dados e tente novamente.")
         }
