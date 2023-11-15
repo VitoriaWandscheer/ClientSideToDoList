@@ -22,10 +22,11 @@ $(document).ready(function() {
 
         var inputEmail = $("#inputEmail").val();
         var inputPassword = $("#inputPassword").val();
+        var remember = $("#remember").is(":checked");
 
-        var resultLogin = MyUser.login(inputEmail, inputPassword);
+        var resultLogin = MyUser.login(inputEmail, inputPassword, remember);
 
-        if(resultLogin == true){
+        if(resultLogin == "true"){
             showToDoListContainer();
         } else {
             alert("Por favor, verifique seus dados e tente novamente.")

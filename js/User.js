@@ -20,7 +20,7 @@ class User {
         }
     ];
 
-    login(email, password) {
+    login(email, password, remember) {
         var result = false;
         var self = this;
         this.userAllowed.map(function(item, index){
@@ -28,8 +28,15 @@ class User {
             if(item.email == email){
                 if(item.password == password){
                     result = true;
-                    sessionStorage.setItem(self.KEY_USER_LOGGED, true);
-                    sessionStorage.setItem(self.KEY_USER_LOGGED_EMAIL, email);
+                    
+                    if(remember == true){
+                        localStorage.setItem(self.KEY_USER_LOGGED, true);
+                        localStorage.setItem(self.KEY_USER_LOGGED_EMAIL, email);
+                    }else{
+                        sessionStorage.setItem(self.KEY_USER_LOGGED, true);
+                        sessionStorage.setItem(self.KEY_USER_LOGGED_EMAIL, email);
+                    }
+
                 } else {
                     alert("Senha incorreta.");
                 }
@@ -43,10 +50,11 @@ class User {
     }
 
     isAuthenticated(){
-        var sessionLogged = sessionStorage.getItem(this.KEY_USER_LOGGED);
+        var sessionStorageLogged = sessionStorage.getItem(this.KEY_USER_LOGGED);
+        var localStorageLogged = localStorage.getItem(this.KEY_USER_LOGGED);
 
-        if(sessionLogged){
-            return sessionLogged;
+        if(sessionStorageLogged || localStorageLogged){
+            return true;
         }
     }
 }
