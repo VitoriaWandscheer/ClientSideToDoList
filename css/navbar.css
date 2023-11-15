@@ -1,0 +1,30 @@
+.navbar{
+    padding: 1.5rem;
+}
+.navbar-desktop {
+    display: flex;
+    justify-content: end;
+    gap: 3rem;
+}
+.collapse:not(.show) {
+    display: inline;
+}
+.btn{
+    padding: .375rem 2.75rem;
+    border-radius: 0.45rem
+}
+
+@media (min-width: 350px){
+    .navbar-expand-md {
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .navbar-expand-md .navbar-collapse {
+        display: -ms-flexbox!important;
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+}
