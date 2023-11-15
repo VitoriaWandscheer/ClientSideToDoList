@@ -1,4 +1,5 @@
 var MyUser = new User();
+var MyDatabase = new Database();
 
 function showToDoListContainer(){
     $("#loginContainer").hide('slow');
