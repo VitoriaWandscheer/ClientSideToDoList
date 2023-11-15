@@ -4,7 +4,7 @@ class Database {
 
     };
 
-    function connect(){
+    connect(){
 
     };
 
